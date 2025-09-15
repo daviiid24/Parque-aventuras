@@ -8,6 +8,7 @@ public class Atraccion {
     private int edadMaxima;
     private String nivelPeligro;
     private double pesoMaximo;
+    private double pesoActual=0;
 
     public Atraccion() {
     }
@@ -90,5 +91,18 @@ public class Atraccion {
             return 0;
         }
     }
+
+    public void subirVisitante(Visitante visitante) {
+        if(visitante.getEdad()<edadMinima || visitante.getEdad()>edadMaxima) {
+            System.out.println(visitante.getNombres()+" no se puede subir a la atraccion, no tiene la edad suficiente");
+        } else if (pesoActual+visitante.getPeso()>pesoMaximo){
+            System.out.println("No se puede subir a la atraccion, peso maximo excedido");
+        } else {
+            pesoActual+=visitante.getPeso();
+            System.out.println(visitante.getNombres() + " ha subido a " + nombre +
+                    ". Peso acumulado: " + pesoActual + " kg");
+        }
+    }
+
 
 }

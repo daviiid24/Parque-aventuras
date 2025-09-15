@@ -20,7 +20,7 @@ public class Main {
         atraccion2.setEdadMinima(14);
         atraccion2.setEdadMaxima(75);
         atraccion2.setNivelPeligro("Alto");
-        atraccion2.setPesoMaximo(100);
+        atraccion2.setPesoMaximo(200);
 
         Atraccion atraccion3 = new Atraccion();
         atraccion3.setNombre("Casa del Terror");
@@ -68,6 +68,10 @@ public class Main {
         obtenerVisitanteConMenorEdadAdolescente(visitante1, visitante2, visitante3);
 
         obtenerInformacionAdultos(visitante1, visitante2, visitante3);
+
+        atraccion2.subirVisitante(visitante1);
+        atraccion2.subirVisitante(visitante2);
+        atraccion2.subirVisitante(visitante3);
     }
 
     public static void edadAtraccionSubir(Atraccion atraccion1, Atraccion atraccion2, Atraccion atraccion3
